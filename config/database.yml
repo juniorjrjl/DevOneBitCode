@@ -1,0 +1,17 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host: <%= ENV['DB_HOST']%>
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: <%= ENV['DB_USER'] %>
+  password: <%= ENV['DB_PASS'] %>
+
+development:
+  <<: *default
+  database: portfolio_onebitcode_development
+test:
+  <<: *default
+  database: portfolio_onebitcode_test
+production:
+  <<: *default
+  database: portfolio_onebitcode_production
