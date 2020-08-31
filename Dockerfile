@@ -8,7 +8,7 @@ RUN apt update && apt install -qq -y --no-install-recommends \
 RUN apt install -y gnupg
  
 # Instalar NodeJS v8
-RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - \
+RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - \
     && apt install -y nodejs
  
 # Instalar o Yarn

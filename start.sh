@@ -1,5 +1,3 @@
-bash
-
 bundle check || bundle install
 
 yarn install

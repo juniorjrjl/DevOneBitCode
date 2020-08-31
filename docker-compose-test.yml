@@ -11,14 +11,15 @@ services:
         ports: 
             - 5432:5432
     
-    app:
+    test:
         depends_on:
             - 'db'
             - 'box'
+            - 'selenium'
         build: .
         command: bash start.sh
         ports: 
-            - 3000:3000
+            - '3000:3000'
         volumes: 
             - '.:/DevOneBitCode'
             - 'box:/box'
@@ -27,6 +28,11 @@ services:
             - DB_HOST=db
             - DB_USER=postgres
             - DB_PASS=postgres
+            - SELENIUM_HOST=selenium
+            - SELENIUM_PORT=4444
+            - TEST_APP_HOST=test
+            - TEST_PORT=3000
+            - RAILS_ENV=test
         stdin_open: true
         tty: true
 
@@ -34,12 +40,16 @@ services:
         image: busybox
         volumes: 
             - box:/box
-
-    mailcacther:
-        image: tophfr/mailcatcher
+    
+    selenium:
+        image: selenium/standalone-chrome-debug:3.0.1-germanium
+        logging: 
+            driver: none
+        stdin_open: true
+        tty: true
         ports: 
-            - 1025:25
-            - 1080:80
+            - '4444:4444'
+            - '5900:5900'
 
 volumes: 
     postgres:
