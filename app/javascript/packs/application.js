@@ -8,7 +8,7 @@ Vue.use(TurbolinksAdapter);
 
 document.addEventListener('turbolinks:load', () =>{
     const app = new Vue({
-        el: '#portifolio-edit',
+        el: '#portfolio-edit',
         render: h => h(App)
     })
 })
