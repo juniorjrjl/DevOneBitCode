@@ -11,7 +11,7 @@
         Cenário: Credenciais válidas
             Dado que o usuário tem parâmetros válidos
             Quando preenche e submete o formulário
-            Então o usuário deve ver seus portifólios
+            Então o usuário deve ver seus portfólios
             E é visível o link sair
 
         Cenário: Credenciais inválidas

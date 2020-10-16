@@ -18,7 +18,7 @@ module PortfolioHelper
         "Ainda não preenchido"
     end
 
-    def render_profile_tags(tags)
+    def render_portfolio_tags(tags)
         disable_tags_quant = Portfolio::MAX_NUMBER_OF_TAGS - tags.count
         tags.each { |tag| concat draw_tag(tag.title) }
         disable_tags_quant.times { concat draw_tag(unused_label, color: "grey") }

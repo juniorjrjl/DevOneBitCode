@@ -1,6 +1,6 @@
 class PortfolioPolicy < ApplicationPolicy
 
-    def index
+    def index?
         true
     end
 

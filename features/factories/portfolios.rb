@@ -1,9 +1,9 @@
 FactoryBot.define do
     factory :portfolio do
-        slug { FFakers::Lorem.unique.word.downcase }
-        active { FFakers::Boolean.sample }
-        listed { FFakers::Boolean.sample }
-        featured { FFakers::Boolean.sample }
+        slug { FFaker::Lorem.unique.word.downcase }
+        active { FFaker::Boolean.sample }
+        listed { FFaker::Boolean.sample }
+        featured { FFaker::Boolean.sample }
         user
     end
 end

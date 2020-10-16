@@ -18,8 +18,8 @@ Quando("preenche e submete o formulário") do
     click_button "ENTRAR"
 end
 
-Então("o usuário deve ver seus portifólios") do
-    expect(page).to have_link('Seus portifólios')
+Então("o usuário deve ver seus portfólios") do
+    expect(page).to have_text('Seus Portfólios')
 end
 
 Então("é visível o link sair") do
@@ -31,8 +31,8 @@ Dado("que o usuário tem parâmetros inválidos") do
 end
 
 Quando("preenche com dados inválidos e submete o formulário") do
-    fill_in "user[email]", with: @user.email
-    fill_in "user[password]", with: @user.password
+    fill_in "user[email]", with: @user[:email]
+    fill_in "user[password]", with: @user[:password]
     click_button "ENTRAR"
 end
 
