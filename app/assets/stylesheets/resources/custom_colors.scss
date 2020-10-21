@@ -1,4 +1,4 @@
-$custom_color: (
+$custom_colors: (
     "custom-black": (
         "base": #292F33
     ),
@@ -21,4 +21,4 @@ $custom_color: (
     )
 
 );
-@include import-colors($custom_color)
+@include import-colors($custom_colors)

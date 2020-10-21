@@ -4,7 +4,7 @@ FactoryBot.define do
         description { FFaker::Lorem.paragraph }
         start_date { Time.now - rand(1..5).year }
         end_date { Time.now }
-        institution { FFaker::Lorem.name }
+        institution { FFaker::Company.name }
 
         portfolio
     end

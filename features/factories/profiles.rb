@@ -6,7 +6,7 @@ FactoryBot.define do
 
         trait :with_photo do
             after :build do |portfolio|
-                image = File.open(Rails.root.join('features', 'factories', 'images', 'profile-photo.png'))
+                image = File.open(Rails.root.join('features', 'factories', 'images', 'portfolio-photo.png'))
                 portfolio.photo.attach(io: image, filename: 'profile-photo.png')
             end
         end
