@@ -24,12 +24,20 @@ class Portfolio < ApplicationRecord
 	enum temp_avatar: {blue_robot: 0, green_robot: 1, orange_red_robot: 2, purple_robot: 3, red_robot: 4, yellow_robot: 5}
 
 	before_create :set_random_temp_avatar
+	before_validation :set_slug, on: :create
 
 	private
 
 	def set_random_temp_avatar
 		avatar_list = Portfolio.temp_avatars.keys
 		self.temp_avatar = avatar_list.sample
+	end
+
+	def set_slug
+		if self.slug.nil?
+			slug_generator = PortfolioSlugGeneratorService.new
+			self.slug = slug_generator.call
+		end
 	end
 
 end
