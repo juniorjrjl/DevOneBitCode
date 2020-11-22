@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 		resources :hobbies, only: [:index, :create, :destroy]
 		resources :languages, only: [:index, :create, :destroy]
 		resources :abouts, only: [:index, :update]
+		resources :socials, only: [:index, :create, :destroy]
 	end
 	
 	resources :tags, only: :index
