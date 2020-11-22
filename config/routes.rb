@@ -4,7 +4,9 @@ Rails.application.routes.draw do
 
 	resources :portfolios, except: :new do
 		resources :tags, only: [:create, :destroy], param: :tag_id, controller: :portfolio_tags
-		resources :blocks, only: [:index, :create, :destroy]
+		resources :blocks, only: [:index, :create, :destroy] do
+			resources :additional_informations, only: [:index, :update]
+		end
 		resources :profiles, only: [:index, :update]
 		resources :experiences, only: [:index, :create, :destroy]
 		resources :educations, only: [:index, :create, :destroy]
