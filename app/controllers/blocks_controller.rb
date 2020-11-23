@@ -2,7 +2,7 @@ class BlocksController < ApplicationController
     before_action :load_portfolio
 
     def index
-        render json: { blocks: @portfolio.blocks }
+        render json: { blocks: @portfolio.blocks.order(:position) }
     end
 
     def create
@@ -12,7 +12,6 @@ class BlocksController < ApplicationController
 
     def destroy
         @block = @portfolio.blocks.find(params[:id])
-        p @block
         destroy_block || render_error
     end
 
