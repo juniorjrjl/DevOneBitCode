@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+	get 'search/index'
 	root 'pages#home'
 	devise_for :users
 
@@ -19,5 +20,6 @@ Rails.application.routes.draw do
 	end
 	
 	resources :tags, only: :index
+	get '/:slug', to: 'portfolios#show'
 end
 	

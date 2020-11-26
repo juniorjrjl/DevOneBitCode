@@ -13,8 +13,7 @@ class HttpUrlValidator < ActiveModel::EachValidator
         uri = URI.parse(@value)
         uri.kind_of?(URI::HTTP) || uri.kind_of?(URI::HTTPS)
         rescue URI::InvalidURIError
-            return false
-        end
+        return false
     end
 
 end
