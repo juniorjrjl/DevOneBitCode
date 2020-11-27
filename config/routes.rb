@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'contact_forms/create'
 	get 'search/index'
 	root 'pages#home'
 	devise_for :users
@@ -18,7 +19,7 @@ Rails.application.routes.draw do
 		resources :abouts, only: [:index, :update]
 		resources :socials, only: [:index, :create, :destroy]
 	end
-	
+	resources :contact_forms, only: [:create]
 	resources :tags, only: :index
 	get '/:slug', to: 'portfolios#show'
 end
