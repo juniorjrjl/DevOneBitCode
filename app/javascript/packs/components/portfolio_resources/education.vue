@@ -82,7 +82,10 @@ export default {
 	methods: {
 		submit() {
 			this.$resource('/portfolios{/id}/educations').save({ id: this.portfolioId }, { education: this.education })
-			.then(response => this.educations.push(response.body.resource)
+			.then(response => {
+				this.educations.push(response.body.resource)
+				this.education = {};
+			}
 			, response => response.body.errors.forEach(error => { M.toast({ html: error, classes: "red" }) }))
 		},
 
