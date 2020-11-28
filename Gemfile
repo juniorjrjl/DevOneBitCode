@@ -15,6 +15,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem "mini_magick"
 gem 'pundit'
+gem 'kaminari'
 
 group :test do
   gem 'cucumber-rails', require: false
