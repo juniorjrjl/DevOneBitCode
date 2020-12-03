@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+	post '/webhooks', to: 'webhooks#webhooks'
 	get :search, to: "search#index"
   	get 'contact_forms/create'
 	root 'pages#home'
@@ -6,6 +7,9 @@ Rails.application.routes.draw do
 	resources :contact_forms, only: [:create]
 
 	resources :portfolios, except: :new do
+		member do
+			resources :payments, only: [:index, :create]
+		end
 		resources :tags, only: [:create, :destroy], param: :tag_id, controller: :portfolio_tags
 		resources :blocks, only: [:index, :create, :destroy] do
 			resources :additional_informations, only: [:index, :update]
