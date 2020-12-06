@@ -1,7 +1,7 @@
 <div class="portfolio col s12 m3 l3">
     <div class="card-panel center">
         <div class="col s12 m12 l12">
-            <a href="" class="remove-portfolio right custom-grey-text text-darken-2">
+            <a href="" data-id="<%= portfolio.id%>" class="remove-portfolio right custom-grey-text text-darken-2">
                 <i class="fa fa-icon fa-times"></i>
             </a>
         </div>
@@ -19,5 +19,17 @@
                 <%= link_to "Visualizar", "/#{portfolio.slug}", class: "btn orange darken-1 right col m12 s12"%>  
             </div>
         </div>
+    </div>
+</div>
+
+
+<div id="removePortfolio" class="modal">
+    <div class="modal-content">
+        <h4>Exclusão de Portfólio</h4>
+        <p>Confirma a exclusão do portfólio ?</p>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" id="confirmDelete" class="green modal-close waves-effect waves-green btn-flat">Sim</a>
+        <a href="#!" class="red modal-close waves-effect waves-green btn-flat">Não</a>
     </div>
 </div>

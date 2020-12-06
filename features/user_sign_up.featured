@@ -1,0 +1,36 @@
+# language:pt
+
+    @javascript
+    Funcionalidade: Criar um novo usuário
+        O usuário deseja criar um novo perfil
+
+        Cenário de Fundo:
+            Dado que o usuário está na página principal
+
+        Cenário: Dados válidos
+            Dado que o usuário informa dados válidos
+            E clica no botão Criar Agora
+            Então o usuário é redirecionado para index de portfólios
+
+        Cenário: Email inválido
+            Dado que o usuário informa email inválido
+            E clica no botão Criar Agora
+            Então o usuário permaneça na página atual
+
+        Cenário: Senha e confirmação de senha não coincide
+            Dado que o usuário informa senha e confirmação de senha diferentes
+            E clica no botão Criar Agora
+            Então o usuário é redirencinado para página de novo usuário
+            E deve haver uma mensagem de senhas diferentes
+
+        Cenário: Email já cadastrado
+            Dado que o usuário informa um email já cadastrado no sistema
+            E clica no botão Criar Agora
+            Então o usuário é redirencinado para página de novo usuário
+            E deve haver uma mensagem de email já cadastrado
+
+        Cenário: Senha muito curta
+            Dado que o usuário informa uma senha muito curta
+            E clica no botão Criar Agora
+            Então o usuário é redirencinado para página de novo usuário
+            E deve haver uma mensagem de senha muito curta

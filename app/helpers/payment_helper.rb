@@ -29,7 +29,7 @@ module PaymentHelper
 		["Tocantins", "TO"]
 	]
 
-	def render_states(name
+	def render_states(name)
 		select_tag(name, options_for_select(ESTADOS_BRASILEIROS))
 	end
 
