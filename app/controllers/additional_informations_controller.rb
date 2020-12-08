@@ -3,8 +3,8 @@ class AdditionalInformationsController < PortfolioResourcesController
     protected
 
     def load_portfolio_resources
-       @portfolio.additional_informations.find_by(block_id: params[:block_id]) ||
-       @portfolio.additional_informations.create(title: "My title", description: "My description", block_id: params[:block_id])
+       @portfolio.additional_information.find_by(block_id: params[:block_id]) ||
+       @portfolio.additional_information.create(title: "My title", description: "My description", block_id: params[:block_id])
     end
 
     def load_portfolio_resource

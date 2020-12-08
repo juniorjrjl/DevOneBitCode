@@ -4,7 +4,7 @@ end
 
 Dado "o portfólio possui 1 Educação" do
 	create(:block, kind: :education, side: :right, portfolio_id: @portfolio.id)
-	@experience = create(:education, portfolio_id: @portfolio.id)
+	@education = create(:education, portfolio_id: @portfolio.id)
 end
 
 Quando "adiciona uma Educação" do

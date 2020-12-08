@@ -2,7 +2,7 @@ Dado "o portfólio possui um bloco de Habilidades" do
 	create(:block, kind: :skill, side: :right, portfolio_id: @portfolio.id)
 end
 
-Dado "o portfólio possui 1 Habilidade" do
+Dado "o portfólio possui 1 Habilidades" do
 	create(:block, kind: :skill, side: :right, portfolio_id: @portfolio.id)
 	@skill = create(:skill, portfolio_id: @portfolio.id)
 end

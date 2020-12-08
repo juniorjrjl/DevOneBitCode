@@ -8,7 +8,7 @@
         </div>
         <div class="row">
     	    <div class="input-field col l12 m12 s12">
-                <vue-ckeditor v-model="additional_information.description" :config="config" @blur="submit()" />
+                <vue-ckeditor id="additional-information-description" v-model="additional_information.description" :config="config" @blur="submit()" />
             </div>
         </div>
     </div>

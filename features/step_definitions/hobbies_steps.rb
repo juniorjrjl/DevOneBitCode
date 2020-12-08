@@ -2,7 +2,7 @@ Dado "o portfólio possui um bloco de Hobbies" do
 	create(:block, kind: :hobby, side: :right, portfolio_id: @portfolio.id)
 end
 
-Dado "o portfólio possui 1 Hobby" do
+Dado "o portfólio possui 1 Hobbies" do
 	create(:block, kind: :hobby, side: :right, portfolio_id: @portfolio.id)
 	@hobby = create(:hobby, portfolio_id: @portfolio.id)
 end

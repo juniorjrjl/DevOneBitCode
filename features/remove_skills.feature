@@ -7,7 +7,7 @@ Funcionalidade: Remover habilidades do Portfólio
 	Cenário de Fundo:
 		Dado usuário está logado
 		E possui o portfólio com slug 'my_portfolio'
-		E o portfólio possui 1 Habilidade
+		E o portfólio possui 1 Habilidades
 		E acessa a página de edição do portfólio
 
 	Cenário: Usuário remove uma Habilidade do Portfolio

@@ -2,7 +2,7 @@ Dado "o portfólio possui um bloco de Linguagens" do
 	create(:block, kind: :language, side: :right, portfolio_id: @portfolio.id)
 end
 
-Dado "o portfólio possui 1 Linguagem" do
+Dado "o portfólio possui 1 Linguagens" do
 	create(:block, kind: :language, side: :right, portfolio_id: @portfolio.id)
 	@language = create(:language, portfolio_id: @portfolio.id)
 end

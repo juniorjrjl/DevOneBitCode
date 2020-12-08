@@ -63,3 +63,23 @@ end
 Dado "possui o portfólio com slug {string}" do |slug|
     @portfolio = create(:portfolio, slug: slug, user_id: @user.id)
 end
+
+Quando "acessa o portfólio com slug {string}" do |slug|
+    visit "#{slug}"
+    wait_for_ajax
+end
+
+Então "todos os blocos criados são exibidos" do
+    check_class_exists(".partial-sobre-mim")
+    check_class_exists(".partial-informações-adicionais")
+    check_class_exists(".partial-educação")
+    check_class_exists(".partial-experiência")
+    check_class_exists(".partial-hobby")
+    check_class_exists(".partial-linguagem")
+    check_class_exists(".partial-habilidade")
+    check_class_exists(".partial-social")
+end
+
+def check_class_exists(class_name)
+    expect(page).to have_css(class_name, count: 1)
+end
