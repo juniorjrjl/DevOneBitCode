@@ -16,6 +16,7 @@ Rails.application.routes.draw do
 			patch :positions, on: :collection, to: "block_positions#update"
 		end
 		resources :profiles, only: [:index, :update]
+		resources :contacts, only: [:index, :update]
 		resources :experiences, only: [:index, :create, :destroy]
 		resources :educations, only: [:index, :create, :destroy]
 		resources :skills, only: [:index, :create, :destroy]
