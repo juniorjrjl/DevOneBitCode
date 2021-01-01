@@ -18,6 +18,7 @@ gem 'pundit'
 gem 'kaminari'
 gem 'moip2'
 gem 'whenever', require: false
+gem 'time_difference', '~> 0.7.0'
 
 group :test do
   gem 'cucumber-rails', require: false
